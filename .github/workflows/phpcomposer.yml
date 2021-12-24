@@ -1,8 +1,8 @@
-name: PHP Composer
+name: Composer
 
 on:
   push:
-    branches: [ feature/bump ]
+    branches: [ develop ]
 
 jobs:
   build:
