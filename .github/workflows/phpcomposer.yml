@@ -1,0 +1,19 @@
+name: PHP Composer
+
+on:
+  push:
+    branches: [ feature/bump ]
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Validate composer files.
+        run: php7.4 /usr/bin/composer validate
+
+      - name: Install dependencies.
+        env:
+          COMPOSER_AUTH: ${{ secrets.COMPOSER_AUTH }}
+        run: php7.4 /usr/bin/composer install --prefer dist --no-progress --no-suggest
