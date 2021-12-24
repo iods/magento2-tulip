@@ -13,6 +13,7 @@
     }
   },
   "require": {
+    "ext-json": "*",
     "magento/module-backend": "102.0.*",
     "magento/module-config": "101.2.*",
     "magento/framework": "103.0.*",
