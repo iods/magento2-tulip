@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Robust location and GPS library for Magento 2.
+ *
+ * @category  Iods
+ * @version   000.1.0
+ * @author    Rye Miller <rye@drkstr.dev>
+ * @copyright Copyright (c) 2021, Rye Miller (https://ryemiller.io)
+ * @license   MIT (https://en.wikipedia.org/wiki/MIT_License)
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+
+    <type name="Magento\Framework\Session\SessionManager">
+        <plugin name="iods_tulip_session_manager_plugin"
+                type="Iods\Tulip\Plugin\Session\SessionManagerPlugin"
+                sortOrder="1" />
+    </type>
+</config>

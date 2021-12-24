@@ -14,10 +14,8 @@ namespace Iods\Tulip\Service;
 
 use Exception;
 use Iods\Tulip\Api\LocationServiceInterface;
-use Magento\Framework\App\ResourceConnection;
 use Magento\Framework\HTTP\Client\Curl;
 use Magento\Framework\HTTP\Client\CurlFactory;
-use Magento\Framework\Filesystem\DirectoryList;
 use Psr\Log\LoggerInterface;
 
 class LocationService implements LocationServiceInterface
@@ -26,22 +24,15 @@ class LocationService implements LocationServiceInterface
 
     private CurlFactory $_curlFactory;
 
-    private DirectoryList $_directoryList;
-
     private LoggerInterface $_loggerInterface;
 
-    private ResourceConnection $_resourceConnection;
 
     public function __construct(
         CurlFactory $curlFactory,
-        DirectoryList $directoryList,
         LoggerInterface $loggerInterface,
-        ResourceConnection $resourceConnection
     ) {
         $this->_curlFactory = $curlFactory;
-        $this->_directoryList = $directoryList;
         $this->_loggerInterface = $loggerInterface;
-        $this->_resourceConnection = $resourceConnection;
     }
 
     public function getCountryCodeByIp(): string
